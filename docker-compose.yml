@@ -1,0 +1,13 @@
+version: "3"
+services:
+  simple_jwt_auth_mysql:
+    image: mysql:8.0
+    container_name: simple_jwt_auth_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./containers/local/mysql/db_data:/var/lib/mysql
+      - ./containers/local/mysql/conf.d:/etc/mysql/conf.d:ro
